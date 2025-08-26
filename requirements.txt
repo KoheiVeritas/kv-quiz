@@ -1,0 +1,4 @@
+Flask==2.3.2
+pandas
+openpyxl
+matplotlib

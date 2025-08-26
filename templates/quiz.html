@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}問題 {{current}} / 10{% endblock %}
+{% block content %}
+<h2>問題 {{current}} / 10</h2>
+
+<div class="card">
+  {% if current <= 5 %}
+    <p><strong>英単語：</strong>{{question.word}}</p>
+  {% else %}
+    <p><strong>意味：</strong>{{question.meaning}}</p>
+  {% endif %}
+
+  <form method="post">
+    {% for c in choices %}
+      <button type="submit" name="answer" value="{{c}}">{{c}}</button>
+    {% endfor %}
+  </form>
+</div>
+{% endblock %}

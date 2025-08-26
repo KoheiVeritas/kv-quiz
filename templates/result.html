@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}結果{% endblock %}
+{% block content %}
+<h1>結果発表</h1>
+
+<div class="card">
+  <p>得点：<strong>{{score}} / 10</strong></p>
+  <a href="{{ url_for('index') }}"><button>もう一度挑戦</button></a>
+</div>
+
+{% if wrong and wrong|length>0 %}
+<div class="card bad">
+  <h3>間違えた問題のフィードバック</h3>
+  <ul>
+    {% for w in wrong %}
+      <li>単語: {{w[0]}} / 正解: {{w[1]}} / あなたの答え: {{w[2]}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if graph_file %}
+<div class="card">
+  <h3>スコア推移</h3>
+  <img src="{{ url_for('static', filename='score_history.png') }}?t={{ ts }}" alt="スコア推移" style="width:100%;">
+</div>
+{% endif %}
+{% endblock %}

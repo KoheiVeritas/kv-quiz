@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}モード選択 - 単語クイズ{% endblock %}
+{% block content %}
+<h1>単語クイズ</h1>
+<div class="card">
+  <p>出題範囲：ターゲット1900（6訂）No.1〜500</p>
+  <form method="post">
+    <button name="mode" value="normal">通常モード（ランダム）</button>
+    <button name="mode" value="weak">苦手単語モード</button>
+  </form>
+  <small class="muted">※10問（意味選択5問＋英単語選択5問）</small>
+</div>
+{% endblock %}

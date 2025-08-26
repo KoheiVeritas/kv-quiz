@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+static/score_history.png
+score_history.csv
+word_stats.csv
+app.db
+.DS_Store
+Thumbs.db
+.env

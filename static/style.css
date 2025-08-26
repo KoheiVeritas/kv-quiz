@@ -1,0 +1,7 @@
+body { font-family: system-ui, Arial, sans-serif; padding: 20px; max-width: 520px; margin: auto; }
+h1, h2, h3 { text-align: center; }
+button { display: block; width: 100%; padding: 14px; margin: 10px 0; font-size: 18px; border-radius: 12px; border: none; background:#1e90ff; color:#fff; }
+button:hover { opacity:.9; }
+.card { background:#fff; border-radius:14px; padding:16px; box-shadow:0 6px 16px rgba(0,0,0,.08); margin:12px 0; }
+.bad { background:#ffe8e8; }
+small.muted { color:#777; }
