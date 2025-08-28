@@ -245,23 +245,28 @@ def quiz():
         else:
             return redirect(url_for("quiz"))
 
-    # === 出題（4択） ===
+        # === 出題（4択） ===
     if current < 5:
         # 前半：意味選択式（問題は英単語、選択肢は意味）
         correct = q["meaning"]
-        pool = [w["意味"] for wdf_i, w in enumerate(pd.DataFrame(word_list))]  # safety fallback
         pool = [w["meaning"] for w in word_list if w["meaning"] != correct]
     else:
         # 後半：英単語選択式（問題は意味、選択肢は英単語）
         correct = q["word"]
         pool = [w["word"] for w in word_list if w["word"] != correct]
 
-    # ダミー3つ + 正解 = 4択
-    distractors = random.sample(pool, 3) if len(pool) >= 3 else pool
+    # ダミー3つ + 正解 = 4択（プールが足りない場合の保険つき）
+    distractors = random.sample(pool, min(3, len(pool)))
+    while len(distractors) < 3 and pool:
+        cand = random.choice(pool)
+        if cand not in distractors:
+            distractors.append(cand)
+
     choices = distractors + [correct]
     random.shuffle(choices)
 
     return render_template("quiz.html", question=q, choices=choices, current=current + 1)
+
 
 @app.route("/result")
 def result():
