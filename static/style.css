@@ -5,3 +5,8 @@ button:hover { opacity:.9; }
 .card { background:#fff; border-radius:14px; padding:16px; box-shadow:0 6px 16px rgba(0,0,0,.08); margin:12px 0; }
 .bad { background:#ffe8e8; }
 small.muted { color:#777; }
+.badge { display:inline-block; padding:6px 12px; border-radius:9999px; color:#fff; font-weight:700; }
+.badge.gold   { background: linear-gradient(135deg,#F7D23E,#CFA500); }
+.badge.silver { background: linear-gradient(135deg,#D9D9D9,#A9A9A9); }
+.badge.bronze { background: linear-gradient(135deg,#C08B5C,#8B5A2B); }
+.badge.special{ background: #1e90ff; }

@@ -17,7 +17,19 @@
     {% endfor %}
   </ul>
 </div>
+{% if new_badges and new_badges|length > 0 %}
+<div class="card">
+  <h3>🏅 新しく獲得した称号</h3>
+  <ul>
+    {% for b in new_badges %}
+      <li>
+        <span class="badge {{ b.rank }}">{{ b.name }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endif %}
+
 
 {% if graph_file %}
 <div class="card">
