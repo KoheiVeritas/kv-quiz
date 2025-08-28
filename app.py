@@ -246,11 +246,11 @@ def quiz():
             return redirect(url_for("quiz"))
 
         # === 出題（4択） ===
-    if current < 5:
+        if current < 5:
         # 前半：意味選択式（問題は英単語、選択肢は意味）
         correct = q["meaning"]
         pool = [w["meaning"] for w in word_list if w["meaning"] != correct]
-    else:
+        else:
         # 後半：英単語選択式（問題は意味、選択肢は英単語）
         correct = q["word"]
         pool = [w["word"] for w in word_list if w["word"] != correct]
